@@ -5,7 +5,7 @@
 input{width:100%;box-sizing:border-box;padding:12px;font-size:1em;border-radius:8px;border:1px solid #444;background:#151922;color:#fff;margin:12px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}.card{background:#171b26;border-radius:10px;padding:10px;text-align:center}
 .card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;background:#222}.card b{display:block;margin:6px 0 2px;font-size:.9em}
-a.btn{display:block;margin-top:6px;padding:9px;border-radius:7px;text-decoration:none;font-weight:600;font-size:.9em}.v{background:#2a3145;color:#cfe}.c{background:#f5c542;color:#111}
+a.btn{display:block;margin-top:6px;padding:9px;border-radius:7px;text-decoration:none;font-weight:600;font-size:.9em}.v{background:#2a3145;color:#cfe}.c{background:#f5c542;color:#111;font-size:1.05em;padding:12px}.sm{display:block;margin-top:6px;font-size:.75em;color:#8a93a8}
 #msg{margin:8px 0;color:#aab}</style></head><body>
 <h1>Crypto Bros&amp;Ho's: Claim Your 3D TwiN (D1)</h1>
 <div class="note">Offers are 2.22 XRP and end Sat Oct 17, 4:20 PM CT. Real CB&amp;H offers come from <b>rNxAwKP3rdNTfe4ZNw1SntXCfW2U4r2XuB</b> and their IDs start with <b>00081770</b>. Block anything else.</div>
@@ -15,7 +15,7 @@ a.btn{display:block;margin-top:6px;padding:9px;border-radius:7px;text-decoration
 let D={};const g=document.getElementById('g'),m=document.getElementById('msg'),w=document.getElementById('w');
 function show(){const a=w.value.trim();g.innerHTML='';if(!a){m.textContent='';return}const L=D[a];
 if(!L){m.textContent='No D1 offers found for this wallet.';return}m.textContent=L.length+' offer(s) for your wallet. Pick the ones you want:';
-for(const o of L){const c=document.createElement('div');c.className='card';c.innerHTML=`<img loading="lazy" src="${o.img}" alt=""><b>${o.n}</b><div>Piece #${o.p} · 2.22 XRP</div><a class="btn v" target="_blank" rel="noopener" href="https://xrp.cafe/nft/${o.id}">View on xrp.cafe</a><a class="btn c" target="_blank" rel="noopener" href="${o.u}">Claim (accept offer)</a>`;g.appendChild(c)}
+for(const o of L){const c=document.createElement('div');c.className='card';c.innerHTML=`<img loading="lazy" src="${o.img}" alt=""><b>${o.n}</b><div>Piece #${o.p} · 2.22 XRP</div><a class="btn c" target="_blank" rel="noopener" href="${o.u}">CLAIM (accept offer)</a><a class="sm" target="_blank" rel="noopener" href="https://xrp.cafe/nft/${o.id}">view piece</a>`;g.appendChild(c)}
 history.replaceState(null,'','?wallet='+encodeURIComponent(a))}
 fetch('offers.json').then(r=>r.json()).then(j=>{D=j;const q=new URLSearchParams(location.search).get('wallet');if(q){w.value=q}show()});w.addEventListener('input',show);
 </script></body></html>
